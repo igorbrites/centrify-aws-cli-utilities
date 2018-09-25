@@ -1,7 +1,5 @@
 # AWS Powershell Utility
 
->These instructions are also available as Word document in the same directory.
-
 ## Highlights
 
 1.  The profiles are stored in the AWS credentials file. Same profile can be used from AWS CLI as well Powershell commands.
@@ -47,22 +45,22 @@ Where region = `us-east-1`, `us-west-1` etc.
 Run the following commands to enable your Powershell session to use the proxy credentials.
 
 ```
-$webclient=New-Object System.Net.WebClient
-$creds=Get-Credential
-$webclient.Proxy.Credentials=$creds
+    webclient=New-Object System.Net.WebClient
+    creds=Get-Credential
+    webclient.Proxy.Credentials=$creds
 ```
 
 ## Logging – Verbose output
 Run command 
 
 ```
-$VerbosePreference=”Continue”
+    VerbosePreference=”Continue”
 ```
 
 to see the verbose output. To set it off, run 
 
 ```
-$VersbosePreference=”SilentlyContinue”
+    VersbosePreference=”SilentlyContinue”
 ```
 
 ## Supported Version
