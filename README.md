@@ -1,5 +1,4 @@
-This package contains the Centrify Amazon Web Services CLI utilities.
+For details please refer to the following links:
 
-Centrify offers Python and PowerShell CLI utilities to access Amazon Web Services by leveraging Centrify Identity Services. The AWS CLI utilities are available from the Downloads area of the Admin Portal.
-
-For further details, please refer to to this link: https://dev-docs.centrify.com/AwsCli/Content/Applications/AppsWeb/AmazonSAML.htm#Centrify_Amazon_Web_Services_CLI_utilities
+* AWS CLI: https://developer.centrify.com/v1.2/docs/aws-cli
+* AWS PowerShell utility: https://developer.centrify.com/v1.2/docs/aws-powershell-utility-v10
