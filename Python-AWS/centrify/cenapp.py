@@ -35,7 +35,7 @@ def get_up_data(session, certpath, proxy):
     headers = {}
     response = cenrest.call_rest_post(session.endpoint, method, body, headers, certpath, proxy)
 '''
-    
+
 def handle_app_click(session, appkey, version, environment, proxy):
     method = "/uprest/handleAppClick?appkey=" + appkey
     body = {}
@@ -83,14 +83,14 @@ def choose_role(encoded_saml, appkey):
         if (saml2attribute.get('Name') == 'https://aws.amazon.com/SAML/Attributes/Role'):
             for saml2attributevalue in saml2attribute.iter('{urn:oasis:names:tc:SAML:2.0:assertion}AttributeValue'):
                 awsroles.append(saml2attributevalue.text)
-    
+
     allroles = []
     saml_provider = []
     for awsrole in awsroles:
         chunks = awsrole.split(',')
-        allroles.append(chunks[0]) 
+        allroles.append(chunks[0])
         saml_provider.append(chunks[1])
-    
+
     printline()
     print(Fore.GREEN)
     print("Select a role to login. Choose one role at a time. This")
@@ -118,13 +118,13 @@ def choose_role(encoded_saml, appkey):
         print('1: ' + allroles[0])
         print("Selecting above role. ")
         selection = 1
-        
+
     role = allroles[selection-1]
-    
-    principle = saml_provider [0]
+
+    principle = saml_provider [selection-1]
     print('You Chose : ', role)
     print('Your SAML Provider : ', principle)
-        
+
     awsinputs = AwsInputs(role, principle, encoded_saml)
     if (len(allroles) == 1):
         return 'one_role_quit', awsinputs
