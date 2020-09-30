@@ -1,1 +1,1 @@
-Please see https://developer.centrify.com/v1.2/docs/aws-cli
+Please see https://developer.centrify.com/docs/aws-cli
