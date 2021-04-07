@@ -21,6 +21,7 @@ $enableVerbose = ($PSBoundParameters['Verbose'] -eq $true)
 
 function Centrify-Authenticate([string]$Tenant="devdog", [string]$Location) 
 {
+    Write-Host "`n-----------Centrify SAML Authentication for AWSCli-----------"
     if ($VerbosePreference -eq "Continue") {
          Write-Host "Making debug on. Note that it will log incoming and outgoing REST messages which can contain sensetive information" -foregroundcolor "red"
     }
