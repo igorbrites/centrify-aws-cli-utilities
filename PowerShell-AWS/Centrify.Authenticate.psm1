@@ -15,15 +15,11 @@
 Import-Module .\Centrify.AWS.SSO.Powershell.psm1 3>$null 4>$null -force
 Import-Module .\Centrify.Samples.PowerShell.psm1 3>$null 4>$null -force
 
-# If Verbose is enabled, we'll pass it through
-$enableVerbose = ($PSBoundParameters['Verbose'] -eq $true)
-
-
 function Centrify-Authenticate([string]$Tenant="devdog", [string]$Location) 
 {
-    Write-Host "`n-----------Centrify SAML Authentication for AWSCli-----------"
-    if ($VerbosePreference -eq "Continue") {
-         Write-Host "Making debug on. Note that it will log incoming and outgoing REST messages which can contain sensetive information" -foregroundcolor "red"
+    Write-Host "`n-----------Centrify SAML Authentication for AWSCli-----------" -foregroundcolor Green
+    if ($DebugPreference -eq "Continue") {
+         Write-Warning "Debug messaging on. Note that it will log incoming and outgoing REST messages which can contain sensetive information."
     }
 	if (!$Tenant -NotLike "https://*") {
     	$Tenant = "https://"+$($Tenant)
