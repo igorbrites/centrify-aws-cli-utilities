@@ -24,11 +24,11 @@ function Centrify-Authenticate([string]$Tenant="devdog", [string]$Location)
     if ($VerbosePreference -eq "Continue") {
          Write-Host "Making debug on. Note that it will log incoming and outgoing REST messages which can contain sensetive information" -foregroundcolor "red"
     }
-	if ($Tenant -NotLike "*.centrify.com") {
-		$Tenant = $($Tenant)+".centrify.com"
+	if (!$Tenant -NotLike "https://*") {
+    	$Tenant = "https://"+$($Tenant)
 	}
     if (!$Region) {
-#        Write-Host "Using default region us-west-2"
+        Write-Host "Using default region us-west-2"
 		$Region = "us-west-2"
 	}
     if (!$Location) {
@@ -37,9 +37,8 @@ function Centrify-Authenticate([string]$Tenant="devdog", [string]$Location)
         $Location = $UserHome + "\.aws\credentials"
         Write-Host $Location
     }
-	$Tenant = "https://"+$($Tenant)
-	Write-Verbose ("Authenticating on " + $Tenant)
-    Write-Verbose("Credentials will be save in " + $Location)
+	Write-Host ("Authenticating on " + $Tenant)
+    Write-Host("Credentials will be save in " + $Location)
     Centrify-AWS-Authentication $Tenant $Region $Location
 	Write-Host "--------------------------COMPLETE---------------------------" -foregroundcolor Green
 }
