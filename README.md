@@ -34,7 +34,7 @@ This is the README file for Centrify offers Python and PowerShell CLI utilities 
 4. Open the Powershell prompt in Administrator mode.  
 5. Run command " Set-ExecutionPolicy Unrestricted " to enable the scripts.  
 6. Run [System.Net.ServicePointManager]::SecurityProtocol and check for TLS12 in the resulting output.  
-7. Run command " .\CentrifyAuthenticate.ps1 –Tenant <Tenant.centrify.com> -Location “\absolute_path\.aws\credentials” ”  
+7. Run command " .\CentrifyAuthenticate.ps1 –Tenant <Tenant.centrify.com> -Location “ USER_HOME/.aws/credentials” ”  
 8. Enter your Centrify credentials for authentication. Note: Credentials may be a MFA per user configuration.  
 9. Once authenticated, all authorized AWS applications are listed.  
 10. Choose an application by entering the number of the application.  
