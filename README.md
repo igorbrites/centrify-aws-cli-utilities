@@ -1,4 +1,4 @@
-Introduction : 
+**Introduction : **
 
 This is the README file for Centrify offers Python and PowerShell CLI utilities to access Amazon Web Services by leveraging Privileged Access Service. The AWS CLI utilities are available from the Downloads area of the Admin Portal.
 
