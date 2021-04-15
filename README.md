@@ -4,8 +4,8 @@ This is the README file for Centrify offers Python and PowerShell CLI utilities 
 
 **Following platforms are supported**
 
-Windows  
-Linux
+1. Windows  
+2. Linux
 
 **Centrify PowerShell utility Installation on Windows**: Please refer to the link :" AWS PowerShell utility: https://developer.centrify.com/docs/aws-powershell-utility-v10 "
 
