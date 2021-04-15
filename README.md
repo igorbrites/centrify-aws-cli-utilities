@@ -9,7 +9,7 @@ This is the README file for Centrify offers Python and PowerShell CLI utilities 
 
 **Centrify PowerShell utility Installation on Windows**: Please refer to the link :" AWS PowerShell utility: https://developer.centrify.com/docs/aws-powershell-utility-v10 "
 
-1. **Pre-requisites**
+**Pre-requisites**
 
 1. PowerShell 5.x  
 2. Install AWS CLI , steps are given below .  
@@ -17,7 +17,7 @@ This is the README file for Centrify offers Python and PowerShell CLI utilities 
 4. Run command " Import-Module AWSPowerShell"  
 5. Configure AWS(SAML) web App on PAS Portal (Follow the Link : https://stage-docs.centrify.com/Content/Applications/AppsWeb/AmazonSAML.htm?cshid=1067#Amazon_Web_Services_(SAML))   
 
-2. **Steps to configure AWS CLI**
+**Steps to configure AWS CLI**
 
 1. Follow the Link https://aws.amazon.com/cli/ to download the windows installer(AWSCLIV2.msi).  
 2. Run AWSCLIV2.msi   
