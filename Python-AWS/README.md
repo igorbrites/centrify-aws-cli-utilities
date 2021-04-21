@@ -4,8 +4,8 @@ README file for Linux Installation
 
 1. Install Python(3.5.x or 3.6.x). Steps given to install 3.5.2, replace it with the required version
     
-    yum install gcc
-    cd /opt
+    yum install gcc\
+    cd /opt\
     wget https://www.Python.org/ftp/Python/3.5.2/Python-3.5.2.tgz
     tar xzf Python-3.5.2.tgz
     cd Python-3.5.2
