@@ -29,7 +29,7 @@ README file for Linux Installation
 4. Configure AWS(SAML) web App on PAS Portal, [PAS Guide](https://stage-docs.centrify.com/Content/Applications/AppsWeb/AmazonSAML.htm?cshid=1067#Amazon_Web_Services_(SAML))\
 
 **Running the program**
-Run the command\
-Python3.5  CentrifyAWSCLI.py -h [-t|-tenant] <tenant> [-r|-region] <region>
+* Run the command\
+    Python3.5  CentrifyAWSCLI.py -h [-t|-tenant] <tenant> [-r|-region] <region>
 
 **Please see, [Detailed Reference Doc](https://developer.centrify.com/docs/aws-cli)**
