@@ -26,7 +26,7 @@ README file for Linux Installation
     aws help //to make sure aws is installed\
     aws configure //to create credentials file. We are not going to use these credentials.
 
-4. Configure AWS(SAML) web App on PAS Portal, [PAS Guide](https://stage-docs.centrify.com/Content/Applications/AppsWeb/AmazonSAML.htm?cshid=1067#Amazon_Web_Services_(SAML))\
+4. Configure AWS(SAML) web App on PAS Portal, [PAS Guide](https://docs.centrify.com/Content/Applications/AppsWeb/AmazonSAML.htm)
 
 **Running the program**
 * Run the command\

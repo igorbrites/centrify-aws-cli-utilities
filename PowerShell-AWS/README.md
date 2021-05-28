@@ -7,7 +7,7 @@
 2. Install AWS CLI , steps are given below .  
 3. Install AWS PowerShell Module, for this run Command " Install-Module AWSPowerShell "  
 4. Run command " Import-Module AWSPowerShell"  
-5. [Configure AWS(SAML) web App on PAS Portal](https://stage-docs.centrify.com/Content/Applications/AppsWeb/AmazonSAML.htm?cshid=1067#Amazon_Web_Services_(SAML))
+5. [Configure AWS(SAML) web App on PAS Portal](https://docs.centrify.com/Content/Applications/AppsWeb/AmazonSAML.htm)
 
 **Steps to configure AWS CLI**
 
