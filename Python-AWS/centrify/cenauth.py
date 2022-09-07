@@ -83,7 +83,7 @@ def advance_authentication(tenant_response, endpoint, username, version, proxy, 
                 for key, value in challenge.items():
                     count = 1
                     for mechanism in value:
-                        print(str(count) + " : " + mechanism['PromptSelectMech'])
+                        print(str(count) + " : " + (mechanism['Type'] if 'PromptSelectMech' not in mechanism else mechanism['PromptSelectMech']))
                         count = count + 1
                     choice = input("Please choose the mechanism : ")
                 try:

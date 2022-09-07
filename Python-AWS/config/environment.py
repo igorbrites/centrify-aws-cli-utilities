@@ -16,9 +16,10 @@ import logging
 
 class Environment(object):
 
-    def __init__(self, name, endpoint, certpath, debug):
+    def __init__(self, name, endpoint, username, certpath, debug):
         self.name = name
         self.endpoint = endpoint
+        self.username = username
         self.certpath = certpath
         self.debug = debug
         self.applications = []
@@ -29,6 +30,7 @@ class Environment(object):
         logging.info(self.name)
         logging.info(self.endpoint)
         logging.info(self.certpath)
+        logging.info(self.username)
         for application in self.applications:
             application.log_application()
         
@@ -37,6 +39,9 @@ class Environment(object):
     
     def get_endpoint(self):
         return self.endpoint
+    
+    def get_username(self):
+        return self.username
     
     def get_certpath(self):
         return self.certpath

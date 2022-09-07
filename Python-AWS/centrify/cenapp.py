@@ -126,6 +126,6 @@ def choose_role(encoded_saml, appkey):
     print('Your SAML Provider : ', principle)
 
     awsinputs = AwsInputs(role, principle, encoded_saml)
-    if (len(allroles) == 1):
-        return 'one_role_quit', awsinputs
-    return 'go', awsinputs
+    # if (len(allroles) == 1):
+    #     return 'one_role_quit', awsinputs
+    return 'one_role_quit', awsinputs

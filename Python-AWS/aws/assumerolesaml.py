@@ -18,8 +18,12 @@ from os.path import expanduser
 import configparser
 import sys
 import logging
+import re
 
 def write_cred(cred, count, display_name, region, role):
+    display_name = re.sub('\W', '', display_name)
+    display_name = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', display_name)
+    display_name = re.sub('([a-z0-9])([A-Z])', r'\1-\2', display_name).lower()
     home = expanduser("~")
     print('home = ' + home)
     cred_file = home + "/.aws/credentials"
@@ -27,10 +31,10 @@ def write_cred(cred, count, display_name, region, role):
     config.read(cred_file)
     print("Display Name : " + display_name)
     rolesplit = role.split('/')
-    profile_name = rolesplit[1] + '_profile'
+    profile_name = rolesplit[1]
 #    profile_name = display_name.replace(" ","-")
 #    section = 'saml' + str(count)
-    section = profile_name #+ '_' + str(count)
+    section = display_name # profile_name #+ '_' + str(count)
     if not config.has_section(section):
         config.add_section(section)
     config.set(section, 'output', 'json')
@@ -47,7 +51,8 @@ def write_cred(cred, count, display_name, region, role):
     print('Example - ')
     print('aws s3 ls --profile ' + section)
     print('-' * 80)
-
+    with open('/tmp/profile', 'w') as profile:
+        profile.write(section)
     
 
 def assume_role_with_saml(role, principle, saml, count, display_name, region):

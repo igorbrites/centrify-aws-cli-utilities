@@ -26,19 +26,20 @@ import traceback
 
 def get_environment(args):
     tenant = args.tenant
-    if ("centrify.com" not in tenant):
-        tenant = tenant + ".centrify.com"
+    # if ("centrify.com" not in tenant):
+    #     tenant = tenant + ".centrify.com"
     name = tenant.split(".")[0]
     tenant = "https://" + tenant
+    username = args.username
     cert = "cacerts_" + name + ".pem"
     debug = args.debug
-    env = environment.Environment(name, tenant, cert, debug)
+    env = environment.Environment(name, tenant, username, cert, debug)
     return env
     
 
 
 def login_instance(proxy, environment):
-    user = input('Please enter your username : ')
+    user = environment.get_username() or input('Please enter your username : ')
     version = "1.0"
     #session = cenauth.centrify_interactive_login(environment.get_endpoint(), user, version, environment.get_certpath(), proxy)
     session = cenauth.centrify_interactive_login(user, version, proxy, environment)
@@ -64,7 +65,8 @@ def select_app(awsapps):
 def client_main():
     parser = argparse.ArgumentParser(description="Enter Centrify Credentials and choose AWS Role to create AWS Profile. Use this AWS Profile to run AWS commands.")
     parser.add_argument("-tenant", "-t", help="Enter tenant url or name e.g. cloud.centrify.com or cloud", default="cloud")
-    parser.add_argument("-region", "-r", help="Enter AWS region. Default is us-west-2", default="us-west-2")
+    parser.add_argument("-username", "-u", help="Enter username", default=None)
+    parser.add_argument("-region", "-r", help="Enter AWS region. Default is us-east-1", default="us-east-1")
 #    parser.add_argument("-cert", "-c", help="Enter Cert file name. Default is cacerts_<tenant>.pem", default="cacerts")
     parser.add_argument("-debug", "-d", help="This will make debug on", action="store_true")
     args = parser.parse_args()
@@ -137,8 +139,8 @@ def client_main():
             if (_quit == 'one_role_quit'):
                 break
 
-        if (len(awsapps) == 1):
-            break
+        # if (len(awsapps) == 1):
+        break
 
     logging.info("Done")
     logging.shutdown()
